@@ -50,6 +50,9 @@ with lines and each column. Only parses to string type.
     So I have to get the difference of : TimeRequestFinished - TimeRequestBegan to get the overall time.
  ##End Point
  The whole function is  counting  number of builds not succeeding  and their exit Code
+ It also outputs the number of builds executed in a time window
+ It also outputs the success rates.
+ 
  ##Dependencies
  Go Standard Library
  '''
