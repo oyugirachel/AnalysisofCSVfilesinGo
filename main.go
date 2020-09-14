@@ -25,8 +25,8 @@ type Statistic struct {
 var stats []*Statistic
 //Time request started
 const(
-	layoutISO= "2018-09-02"
-	layoutUS= "September 9, 2018"
+	layoutISO = "2006-01-02"
+	layoutUS  = "January 2, 2006 "
 )
 
 func main() {
@@ -36,11 +36,13 @@ func main() {
 		log.Fatal(err)
 	}
 	//Inputing the time range to a variable t
-	date:="2018-10-31"
-	t,_:=time.Parse(layoutISO,date)
+	startdate := "2018-10-6"
+	enddate := "2018-11-10"
+	s, _ := time.Parse(layoutISO, startdate)
+	e, _ := time.Parse(layoutISO, enddate)
   //Refers to the Build Execution time
 
-	finished := BuildExecuteTime(t, time.Now())
+	finished := BuildExecuteTime(s, e)
 	fmt.Printf("%d builds finished in provided range\n\n", finished)
 
 	user := UserBuildRemoteService()

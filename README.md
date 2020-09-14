@@ -74,8 +74,9 @@ with lines and each column. Only parses to string type.
 
 - Using Assertions - [Testify](https://github.com/stretchr/testify) Go does not provide any built-in package for assertions  so i decided to use 3rd party  
 #Conclusion
-This project could be improved more if analysed carefully for example for it to be able to output the number of ids repeated instead of displaying them concurrently and in knowing the real users using the remote build the most.
-According to the stats.csv We are getting all the ids being repeated
+This project could be improved more if analysed carefully for example for it to be able to output the number of ids repeated instead of displaying them concurrently and in knowing the real users using the remote build the most, also the time module can be improved to calculate the time span example 15minutes (channels in goroutines)
+If given more time i would have done unit tests and code coverage.
+According to the stats.csv We are getting all the ids being repeated.
 When you just run the code as it is You get 0 builds succeeded but when you go and toggle with the builds in the csv for example you try toggling to 1 or 2 it outputs 1 build and 2 builds not succeeded respectively.
 In the time function(func inTimeSpan) you just pass the time and it will output the data
 This whole projects involves extraction and analysis of the data.
