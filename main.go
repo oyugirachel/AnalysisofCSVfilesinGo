@@ -101,12 +101,13 @@ func ReadCsv(filename string) error {
 	}
 	defer file.Close()
 
-	// Read File into a Variable
-	lines, err := csv.NewReader(file).ReadAll()
+	// Read File into a Variable To read in the CSV data, we create a new CSV reader that reads from the input file.
+	//The CSV reader is aware of the CSV data format. It separates the input stream into rows and columns, and returns a slice of slices of strings.
+	lines, err := csv.NewReader(file).ReadAll() //Read the whole file at once. (We don’t expect large files.)
 	if err != nil {
 		return err
-	}
-
+	}  //We check for any error
+    //Now that the data is read in, we can loop over data, and read from or write to each line slice as needed.
 	for _, line := range lines {
 		received, _ := time.Parse(time.RFC3339, line[2])
 		began, _ := time.Parse(time.RFC3339, line[3])
@@ -126,7 +127,7 @@ func ReadCsv(filename string) error {
 			ImageSize:           size,
 		}
 
-		stats = append(stats, stat)
+		stats = append(stats, stat) //appending the data to the stats file
 	}
 
 	return nil
