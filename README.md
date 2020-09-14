@@ -52,8 +52,15 @@ with lines and each column. Only parses to string type.
  The whole function is  counting  number of builds not succeeding  and their exit Code
  ##Dependencies
  Go Standard Library
+ '''
+ "encoding/csv"
+ 	"fmt"
+ 	"log"
+ 	"os"
+ 	"strconv"
+ 	"time"
  
- 
+ '''
   
 ## Testing
 
@@ -64,8 +71,8 @@ with lines and each column. Only parses to string type.
 
 - Using Assertions - [Testify](https://github.com/stretchr/testify) Go does not provide any built-in package for assertions  so i decided to use 3rd party  
 #Conclusion
-This project could be improved more if analysed carefully for example for it to be able to output the number of ids repeated instead of displaying them concurrently, and in knowing the real users using the remote build the most, and the success rate.
+This project could be improved more if analysed carefully for example for it to be able to output the number of ids repeated instead of displaying them concurrently and in knowing the real users using the remote build the most.
 According to the stats.csv We are getting all the ids being repeated
-When you just run the code as it is You get 0 bulds succeeded but when you go and toggle with the builds in the csv for example you try toggling to 1 or 2 it outputs 1 build and 2 builds not succeeded respectively.
+When you just run the code as it is You get 0 builds succeeded but when you go and toggle with the builds in the csv for example you try toggling to 1 or 2 it outputs 1 build and 2 builds not succeeded respectively.
 In the time function(func inTimeSpan) you just pass the time and it will output the data
 This whole projects involves extraction and analysis of the data.

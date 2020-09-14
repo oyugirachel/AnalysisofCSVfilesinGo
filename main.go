@@ -23,6 +23,11 @@ type Statistic struct {
 
 // pointing  to Statistic struct
 var stats []*Statistic
+//Time request started
+const(
+	layoutISO= "2018-09-02"
+	layoutUS= "September 9, 2018"
+)
 
 func main() {
 
@@ -30,9 +35,12 @@ func main() {
 	if err := ReadCsv("stats.csv"); err != nil {
 		log.Fatal(err)
 	}
+	//Inputing the time range to a variable t
+	date:="2018-10-31"
+	t,_:=time.Parse(layoutISO,date)
+  //Refers to the Build Execution time
 
-
-	finished := BuildExecuteTime(time.Now(), time.Now())
+	finished := BuildExecuteTime(t, time.Now())
 	fmt.Printf("%d builds finished in provided range\n\n", finished)
 
 	user := UserBuildRemoteService()
